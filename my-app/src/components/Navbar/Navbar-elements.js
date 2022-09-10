@@ -55,9 +55,9 @@ export const Menu = styled.ul`
     color: #fff;
     padding: 0 1%;
     @media screen and (max-width: 960px) {
-        position: absolute;
+        position: fixed;
         background-color: #545453;
-
+        z-index: 10;
         top: 70px;
         width: 100%;
         height: 90vh;

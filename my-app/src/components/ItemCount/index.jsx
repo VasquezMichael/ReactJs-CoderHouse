@@ -6,10 +6,8 @@ export const ItemCount = ({initial,stock,onAdd}) => {
 
     const increase = () => count < stock ? SetCount(count + 1) : console.log('La cantidad no puede ser mayor a ',stock);
     const decrease = () => count > initial ? SetCount(count - 1) : console.log('La cantidad no puede ser menor a ',initial);
-
-    console.log(count);
     return (
-        <Flex minWidth='max-content' maxWidth='400px' justifyContent='center' alignItems='center' gap='2'>
+        <Flex minWidth='max-content' maxWidth='400px'  gap='2'>
             <Button colorScheme='teal' size='sm' onClick={decrease}>-</Button>
             <Spacer />
             <Box p='2'>

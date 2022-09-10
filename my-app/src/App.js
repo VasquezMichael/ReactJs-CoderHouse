@@ -6,8 +6,8 @@ import { ChakraProvider } from '@chakra-ui/react'
 function App() {
   return (
     <>
-      <Navbar/>
       <ChakraProvider>
+        <Navbar/>
         <ItemListContainer greeting = 'Bienvenido a DripCode pana'/>
       </ChakraProvider>
     </>
