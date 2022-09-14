@@ -33,7 +33,7 @@ export const LogoContainer =  styled.div`
     p{
         color: #F3F17F;
         font-size: 2.2rem;
-        font-family: 'Kaushan Script';
+        font-family: 'Smooch';
     }
 
     svg{

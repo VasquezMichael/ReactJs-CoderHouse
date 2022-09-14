@@ -1,6 +1,6 @@
 import { Spinner } from '@chakra-ui/react'
 import { ItemCount } from'../ItemCount'
-import {ListContainer} from './style'
+import {Container, ContainerTittle, ListContainer} from './style'
 import { products } from '../../utils/products'
 import { customFetch } from '../../utils/customFetch'
 import { useState, useEffect } from 'react'
@@ -21,15 +21,23 @@ const ItemListContainer = ({greeting}) => {
   },[])
 
   return (
-    <ListContainer>
-        <h1>{greeting}</h1>
-        {
-          loading ? <Spinner /> : <ItemList listProduct={listProduct}/>
-        }
+    <Container>
+        <ContainerTittle>
+          <h1>{greeting}</h1>
+        </ContainerTittle>
 
-        {/* <ItemCount initial={1} stock={5} onAdd ={()=>{}}/> */}
+        <ListContainer>
+          {
+            loading ? <Spinner /> : <ItemList listProduct={listProduct}/>
+          }
 
-    </ListContainer>
+          {/* <ItemCount initial={1} stock={5} onAdd ={()=>{}}/> */}
+
+        </ListContainer>
+    </Container>
+
+
+
   )
 }
 

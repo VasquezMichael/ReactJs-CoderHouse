@@ -8,7 +8,7 @@ function App() {
     <>
       <ChakraProvider>
         <Navbar/>
-        <ItemListContainer greeting = 'Bienvenido a DripCode pana'/>
+        <ItemListContainer greeting = 'Bienvenido a DripCode'/>
       </ChakraProvider>
     </>
   );
