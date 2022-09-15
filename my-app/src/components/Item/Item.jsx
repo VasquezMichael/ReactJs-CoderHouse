@@ -1,14 +1,18 @@
 import { Image, VStack,Text,Link } from "@chakra-ui/react";
+import { ContainerDescription } from "../ItemListContainer/style";
 import { Card } from "./style";
 const Item = ({product}) => {
   return (
     <Card>
-        <h3>{product.name}</h3>
+        <h2>{product.name}</h2>
         <div className="image">
           <img src={product.image} alt="" />
         </div>
         <div className="contenido">
-          <p>{product.description}</p>
+          <div className="description">
+           <p>{product.description}</p>
+           <h3>{product.price}</h3>
+          </div>
           <a href="#">Ver Mas</a>
         </div>
     </Card>

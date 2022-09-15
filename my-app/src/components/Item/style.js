@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-    width: 400px;
+    width: 360px;
     margin: 20px;
     display: flex;
     flex-direction: column;
@@ -16,14 +16,22 @@ export const Card = styled.div`
     background-color: #E1DEE3;
     :hover{
         box-shadow:  5px 5px 20px rgba(0,0,0,0.4);
-        transform: translateY(-3%);
     }
 
-    h3{
-        font-size: 1.6em;
+    h2{
+        font-size: 1.5em;
         color: #9B42C7;
         font-family: 'Acme';
-        
+    }
+    h3{
+        font-size: 1.3em;
+        color: #9B42C7;
+        font-family: 'Acme';
+    }
+
+    p{
+        color: #6a6a6a;
+        line-height: 1.5;
     }
 
 
@@ -34,8 +42,8 @@ export const Card = styled.div`
         align-items: center;
         margin: 20px 0px 10px 0;
         img{
-            width: 330px;
-            height: 330px;
+            width: 300px;
+            height: 300px;
         }
     }
 
@@ -44,9 +52,11 @@ export const Card = styled.div`
         text-align: center;
     }
 
-    p{
-        color: #6a6a6a;
-        line-height: 1.5;
+    .description{
+        height: 80px;
+        h3{
+            margin-top: 10px;
+        }
     }
 
     a{
@@ -63,6 +73,72 @@ export const Card = styled.div`
     a:hover{
         background-color: #9B42C7;
         color: #fff;
+    }
+
+
+    @media screen and (min-width: 960px) {
+        display: flex;
+        width: 300px;
+        height: 370px;
+        text-align: center;
+        justify-content: center;
+        transition: all 1000ms ease;
+        :hover{
+            
+            transform: translateY(-3%);
+        }
+        .contenido{
+            padding: 3px;
+            text-align: center;
+        }
+
+        h2{
+            font-size: 1.4em;
+            color: #9B42C7;
+            font-family: 'Acme';
+            margin-top: 10px;
+            margin-bottom: 9px;
+        }
+
+
+        .image{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            img{
+                width: 200px;
+                height: 210px;
+                transition: all 1000ms ease;
+                :hover{
+                    border-radius: 6px;
+                    transform: scale(1.08);
+                    
+                }
+            }
+         }
+
+         
+    .description{
+        height: 30px;
+        margin-top: 5px;
+        line-height: 1;
+        h3{
+            margin-bottom: 50px;
+            font-size: 20px;
+            color: #9B42C7;
+            font-family: 'Acme';
+        }
+    }
+
+    a{
+      margin-top: 35px;
+      margin-bottom: 10px;
+      padding: 4px;
+      font-size: 15px;
+    }
+
     }
 `
 

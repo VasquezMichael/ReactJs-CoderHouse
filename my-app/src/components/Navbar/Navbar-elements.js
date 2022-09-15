@@ -20,6 +20,7 @@ export const Wrapper = styled.div`
     align-items: center;
     margin: auto;
     flex-wrap: wrap;
+    
 
 `;
 
@@ -54,8 +55,9 @@ export const Menu = styled.ul`
     align-items: center;
     color: #fff;
     padding: 0 1%;
+
     @media screen and (max-width: 960px) {
-        position: fixed;
+        position: absolute;
         background-color: #545453;
         z-index: 10;
         top: 70px;
@@ -79,6 +81,7 @@ export const MenuItem = styled.li`
         height: 70px;
         align-items: center;
         justify-content: center;
+        margin-top: 20px;
     }
 `;
 

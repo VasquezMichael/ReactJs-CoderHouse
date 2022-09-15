@@ -6,7 +6,7 @@ export const ListContainer = styled.div`
     background-color: #CAC6CB;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     padding: 1em 0;
     flex-wrap: wrap;
 
@@ -29,11 +29,19 @@ export const ContainerTittle = styled.div`
     text-align: center;
     justify-content: center;
     padding-bottom: .3em;
-    font-size: 3em;
+    font-size: 3.3em;
     font-family:  'Smooch';
 
     h1{
         margin-top: 15px;
     }
+
+    @media screen and (max-width: 960px) {
+        font-size: 2.5em;
+    }
     
+`
+
+export const ContainerDescription = styled.div`
+
 `
