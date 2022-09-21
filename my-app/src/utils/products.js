@@ -57,36 +57,7 @@ export const products = [
         category: "Gorras",
         description: "Champion x USA",
         price: "50 USD"
-    },
-
-    {
-        id: 8,
-        image: "https://scene7.zumiez.com/is/image/zumiez/cat_max/Champion-Black-Dome-Bucket-Hat-_343364.jpg",
-        name: "Cap vintage ",
-        category: "Gorras",
-        description: "Champion x USA",
-        price: "50 USD"
-    },
-
-    {
-        id: 9,
-        image: "https://scene7.zumiez.com/is/image/zumiez/cat_max/Champion-Black-Dome-Bucket-Hat-_343364.jpg",
-        name: "Cap vintage ",
-        category: "Gorras",
-        description: "Champion x USA",
-        price: "50 USD"
-    },
-
-    {
-        id: 10,
-        image: "https://scene7.zumiez.com/is/image/zumiez/cat_max/Champion-Black-Dome-Bucket-Hat-_343364.jpg",
-        name: "Cap vintage ",
-        category: "Gorras",
-        description: "Champion x USA",
-        price: "50 USD"
     }
-
-
 
 
     

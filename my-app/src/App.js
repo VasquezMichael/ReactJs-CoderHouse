@@ -1,6 +1,7 @@
 import './App.css';
 import {Navbar} from './components/Navbar'
 import {ItemListContainer} from './components/ItemListContainer'
+import { ItemDetailContainer } from './components/ItemDetailContainer';
 
 import { ChakraProvider } from '@chakra-ui/react'
 function App() {
@@ -8,7 +9,8 @@ function App() {
     <>
       <ChakraProvider>
         <Navbar/>
-        <ItemListContainer greeting = 'Bienvenido a DripCode'/>
+        {/* <ItemListContainer greeting = 'Bienvenido a DripCode'/> */}
+        <ItemDetailContainer/>
       </ChakraProvider>
     </>
   );
