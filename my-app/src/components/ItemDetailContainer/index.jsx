@@ -1,8 +1,8 @@
-import { Text } from '@chakra-ui/react';
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { ItemDetail } from '../ItemDetail'
-
+import {Text} from '@chakra-ui/react'
+import { Container } from './style'
 
 const ItemDetailContainer = () => {
 
@@ -28,10 +28,10 @@ const ItemDetailContainer = () => {
 
 
   return (
-    <>
+    <Container>
         {loading ?  <Text>Cargando...</Text> :  <ItemDetail listProduct = {listProduct}/>}
         
-    </>
+    </Container>
   )
 }
 

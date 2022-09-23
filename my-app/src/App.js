@@ -9,7 +9,7 @@ function App() {
     <>
       <ChakraProvider>
         <Navbar/>
-        {/* <ItemListContainer greeting = 'Bienvenido a DripCode'/> */}
+        <ItemListContainer greeting = 'Bienvenido a DripCode'/>
         <ItemDetailContainer/>
       </ChakraProvider>
     </>
