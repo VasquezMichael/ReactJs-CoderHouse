@@ -1,0 +1,11 @@
+.Link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0.5rem 2.5rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: 0.5s all ease;
+
+}

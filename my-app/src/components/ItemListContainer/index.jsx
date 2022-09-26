@@ -2,7 +2,7 @@ import { Spinner } from '@chakra-ui/react'
 import { ItemCount } from'../ItemCount'
 import {Container, ContainerTittle, ListContainer} from './style'
 import { products } from '../../utils/products'
-import { customFetch } from '../../utils/customFetch'
+import { customFetch, getListProduct  } from '../../utils/customFetch'
 import { useState, useEffect } from 'react'
 import { ItemList } from '../ItemList'
 
@@ -12,12 +12,18 @@ const ItemListContainer = ({greeting}) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(()=>{
-    setLoading(true);
-    customFetch(products)
-      .then(res =>{
+    const getListProduct = async () => {
+      try {
+        const res = await fetch('https://fakestoreapi.com/products?limit=5');
+        const listProduct = await res.json();
         setLoading(false);
-        setListProduct(res);
-      } )
+        setListProduct(listProduct);
+      } catch (error) {
+        console.log(error);
+     }
+
+    }
+    getListProduct();
   },[])
 
   return (

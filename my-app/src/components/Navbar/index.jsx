@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-//import { HStack, Flex, Spacer, Link, Text, Box, Center} from '@chakra-ui/react'
 import { GiGooeyDaemon } from "react-icons/gi";
-
 import { IconContext } from "react-icons";
 import {Container, LogoContainer, Wrapper, Menu, MenuItem, MenuItemLink, MobileIcon } from './Navbar-elements.js'
 import { CartWidget } from '../CartWidget/index.jsx';
 import { CarritoLink } from '../CartWidget/CartWidgetStyle.js';
+
+import {NavLink, Link} from "react-router-dom";
 
 import { 
     FaBars,
@@ -22,10 +22,12 @@ const Navbar = () => {
     <Container>
         <Wrapper>
             <IconContext.Provider value = {{style: {fontSize: "2.2em"}}}>
-            <LogoContainer>
-                <GiGooeyDaemon/>    
-                <p>DripCode</p>
-            </LogoContainer>
+            <NavLink to='/'>
+                <LogoContainer>
+                        <GiGooeyDaemon/>    
+                        <p>DripCode</p>
+                </LogoContainer>
+            </NavLink>
             <MobileIcon onClick={() => setShowMobileMenu(!showMobileMenu)}>
                 {
                     showMobileMenu ? <FaTimes/> : <FaBars/>
@@ -33,33 +35,34 @@ const Navbar = () => {
             </MobileIcon>
             <Menu open = {showMobileMenu}>
                 <MenuItem>
-                    <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                    <Link className='Link' to='/' onClick={() => setShowMobileMenu(!showMobileMenu)}>
                         <div>
                             <FaHome/>
                             Home
                         </div>
-                    </MenuItemLink>
+                    </Link>
                 </MenuItem>
                 <MenuItem>
-                    <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                        <div>
+                    <Link className='Link' to='/category/electronics' onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                         <div>
                             <FaUserAlt/>
-                            About
+                            Electronics
                         </div> 
-                    </MenuItemLink>
+                    </Link>
                 </MenuItem>
                 <MenuItem>
-                    <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                    <Link className='Link' to='/category/jewelery' onClick={() => setShowMobileMenu(!showMobileMenu)}>
                         <div>
                             <FaTshirt/>
-                            Shop
+                            Jewelery
                         </div> 
-                    </MenuItemLink>
+                    </Link>
                 </MenuItem>
+                
                 <MenuItem>
-                    <CarritoLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                    <Link className='Link LinkCartWidget' to='/category/cart' onClick={() => setShowMobileMenu(!showMobileMenu)}>
                         <CartWidget/>
-                    </CarritoLink>
+                    </Link>
                 </MenuItem>
             </Menu>
             </IconContext.Provider>

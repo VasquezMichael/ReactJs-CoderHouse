@@ -42,8 +42,8 @@ export const Card = styled.div`
         align-items: center;
         margin: 20px 0px 10px 0;
         img{
-            width: 300px;
-            height: 300px;
+            width: 220px;
+            height: 220px;
         }
     }
 
@@ -53,16 +53,17 @@ export const Card = styled.div`
     }
 
     .description{
-        height: 80px;
-        h3{
-            margin-top: 10px;
-        }
-    }
+        max-height: 90px;
+        overflow: hidden;
 
+    }
+    h3{
+            margin-top: 15px;
+    }
     a{
       text-decoration: none;
       display: inline-block;
-      margin-top: 15px;
+      margin-top: 20px;
       padding: 4px;
       font-size: 18px;
       border: 1.5px solid #9B42C7;
@@ -79,7 +80,7 @@ export const Card = styled.div`
     @media screen and (min-width: 960px) {
         display: flex;
         width: 300px;
-        height: 370px;
+        height: 470px;
         text-align: center;
         justify-content: center;
         transition: all 1000ms ease;
@@ -93,13 +94,12 @@ export const Card = styled.div`
         }
 
         h2{
-            font-size: 1.4em;
+            font-size: 1.2em;
             color: #9B42C7;
             font-family: 'Acme';
             margin-top: 10px;
             margin-bottom: 9px;
         }
-
 
         .image{
             width: 100%;
@@ -113,27 +113,24 @@ export const Card = styled.div`
                 transition: all 1000ms ease;
                 :hover{
                     border-radius: 6px;
-                    transform: scale(1.08);
-                    
                 }
             }
          }
 
          
     .description{
-        height: 30px;
+        max-height: 75px;
         margin-top: 5px;
         line-height: 1;
-        h3{
-            margin-bottom: 50px;
-            font-size: 20px;
-            color: #9B42C7;
-            font-family: 'Acme';
-        }
     }
-
+    h3{
+        margin-bottom: 0px;
+        font-size: 20px;
+        color: #9B42C7;
+        font-family: 'Acme';
+    }
     a{
-      margin-top: 35px;
+      margin-top: 0px;
       margin-bottom: 10px;
       padding: 4px;
       font-size: 15px;

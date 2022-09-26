@@ -6,7 +6,7 @@ export const Container = styled.div`
     background-color: #545453;
     height: 70px;
     width: 100%;
-    
+
     
 `;
 
@@ -41,6 +41,7 @@ export const LogoContainer =  styled.div`
         color: #9B42C7;
         margin-right: 5px;
     }
+    //vista mobile
     @media screen and (max-width: 960px) {
         margin-left: 10px;
     }
@@ -55,7 +56,7 @@ export const Menu = styled.ul`
     align-items: center;
     color: #fff;
     padding: 0 1%;
-
+//vista mobile
     @media screen and (max-width: 960px) {
         position: absolute;
         background-color: #545453;
@@ -74,7 +75,74 @@ export const Menu = styled.ul`
 
 export const MenuItem = styled.li`
     height: 100%;
-   
+    .Link{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 0.5rem 2.5rem;
+        font-size: 1.3rem;
+        cursor: pointer;
+        transition: 0.5s all ease;
+        
+        &:hover{
+            transition: 0.5s all ease;
+            color: #000;
+            background-color: #F3F17F;
+        }
+
+        div{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            svg{
+                display: none;
+            }
+        }
+        //Vista mobile
+        @media screen and (max-width: 960px){
+            width: 100%;
+            div{
+                justify-content: center;
+                align-items: center;
+                svg{
+                    display: flex;
+                    margin-right: 15px;
+                    width: 40px;
+                }
+            }
+        }
+
+    }
+
+    .LinkCartWidget{
+        div{
+            width: 100%;
+            height: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            p{
+                display: none;
+            }
+            svg{
+                display: flex;
+                margin-right: 15px;
+                width: 25px;
+            }
+            @media screen and (max-width: 960px){
+                p{
+                    display: flex;
+                    font-size: 1.3em;
+                    padding-left: 15px;
+                }
+            }
+        }
+    }
+   //vista mobile
     @media screen and (max-width: 960px)  {
         display: flex;
         width: 100%;
@@ -113,7 +181,7 @@ export const MenuItemLink = styled.a`
             display: none;
         }
     }
-    
+    //Vista mobile
     @media screen and (max-width: 960px){
         width: 100%;
 
@@ -136,7 +204,7 @@ export const MenuItemLink = styled.a`
 
 export const MobileIcon = styled.div`
     display: none;
-
+//vista mobile
     @media screen and (max-width: 960px){
         display: block;
         align-items: center;

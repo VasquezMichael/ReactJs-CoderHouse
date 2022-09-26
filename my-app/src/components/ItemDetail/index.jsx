@@ -3,7 +3,6 @@ import { Cart,Image, Contenido } from './style';
 
 
 const ItemDetail = ({listProduct}) => {
-  console.log(listProduct);
   return (
     <Cart>
       <Image>
