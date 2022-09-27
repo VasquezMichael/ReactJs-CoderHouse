@@ -1,6 +1,8 @@
-import { Image, VStack,Text,Link } from "@chakra-ui/react";
 import { ContainerDescription } from "../ItemListContainer/style";
+import {NavLink, Link} from "react-router-dom";
 import { Card } from "./style";
+
+
 const Item = ({product}) => {
   return (
     <Card>
@@ -13,7 +15,7 @@ const Item = ({product}) => {
            <p>{product.description}</p>
           </div>
           <h3>{product.price}</h3>
-          <a href="#">Ver Mas</a>
+          <Link to={`/product/${product.id}`} className="Link">Ver Mas</Link>
         </div>
     </Card>
   )

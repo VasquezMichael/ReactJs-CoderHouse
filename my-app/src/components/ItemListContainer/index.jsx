@@ -5,26 +5,35 @@ import { products } from '../../utils/products'
 import { customFetch, getListProduct  } from '../../utils/customFetch'
 import { useState, useEffect } from 'react'
 import { ItemList } from '../ItemList'
-
+import { useParams } from 'react-router-dom'
 
 const ItemListContainer = ({greeting}) => {
   const [listProduct, setListProduct] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  
+  const {category} = useParams();
+  const URL_BASE = 'https://fakestoreapi.com/products';
+  const URL_CATEGORY = 'https://fakestoreapi.com/products/category';
+  let url = '';
+  
   useEffect(()=>{
+
+    category ? url = URL_CATEGORY + '/'+category : url = URL_BASE;
+
     const getListProduct = async () => {
-      try {
-        const res = await fetch('https://fakestoreapi.com/products?limit=5');
+      try { 
+        const res = await fetch(`${url}`);
         const listProduct = await res.json();
         setLoading(false);
         setListProduct(listProduct);
-      } catch (error) {
+      }
+       catch (error) {
         console.log(error);
-     }
+      }
 
     }
     getListProduct();
-  },[])
+  },[category])
 
   return (
     <Container>

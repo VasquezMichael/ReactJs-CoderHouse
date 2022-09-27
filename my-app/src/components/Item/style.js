@@ -60,7 +60,7 @@ export const Card = styled.div`
     h3{
             margin-top: 15px;
     }
-    a{
+    .Link{
       text-decoration: none;
       display: inline-block;
       margin-top: 20px;
@@ -71,7 +71,7 @@ export const Card = styled.div`
       transition: all 400ms ease;
     }
 
-    a:hover{
+    .Link:hover{
         background-color: #9B42C7;
         color: #fff;
     }
