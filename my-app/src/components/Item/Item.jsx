@@ -6,7 +6,9 @@ import { Card } from "./style";
 const Item = ({product}) => {
   return (
     <Card>
-        <h2>{product.title}</h2>
+        <div className="title">
+          <h2>{product.title}</h2>
+        </div>
         <div className="image">
           <img src={product.image} alt="" />
         </div>

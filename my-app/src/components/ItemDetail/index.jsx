@@ -10,8 +10,10 @@ const ItemDetail = ({listProduct}) => {
       </Image>
       <Contenido>
         <h2 className="title">{listProduct.title}</h2>
-        <p className=" description">{listProduct.description}</p>
-        <h3>{listProduct.price}</h3>
+        <div className="description">
+          <p className=" description_p">{listProduct.description}</p>
+        </div>
+        <h3>{'$'+listProduct.price}</h3>
       </Contenido>
     </Cart>
   )

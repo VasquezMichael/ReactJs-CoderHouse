@@ -38,7 +38,9 @@ const ItemListContainer = ({greeting}) => {
   return (
     <Container>
         <ContainerTittle>
-          <h1>{greeting}</h1>
+          <h1>{
+            category ? greeting + category: greeting 
+          }</h1>
         </ContainerTittle>
 
         <ListContainer>

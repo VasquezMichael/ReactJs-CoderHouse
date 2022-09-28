@@ -3,59 +3,71 @@ import styled from "styled-components";
 export const Cart = styled.div`
     display: flex;
     width: 100%;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
-    justify-content: center;
+    justify-content: space-around;
 `
 
 export const Image = styled.div`
     display: flex;
-    margin-top: 20px;
+    margin-top: 10px;
     text-align: center;
     justify-content: center;
     img{
-        width: 620px;
+        width: 400px;
         height: 210px;
+         //Vista Desktop
         @media screen and (min-width: 700px) {
-            width: 100%;
-            
+            width: 85%;
+
         }
     }
-
+ //Vista Desktop
     @media screen and (min-width: 700px) {
-        width: 500px;
+        width: 480px;
         height: 210px;
-        background-color: black;
-
     }
 
 `
 
 export const Contenido = styled.div`
-    margin-top: 15px;
-    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    .description{
+        text-align: center;
+        justify-content: center;
+        width: 300px;
+        max-height: 137px;
+        overflow: hidden;
+    }
     h2{
-        font-size: 1.2em;
+        font-size: 1.4em;
         color: #9B42C7;
         font-family: 'Acme';
         margin-bottom: 10px;
     }
-
+    
     p{
         color: #6a6a6a;
         line-height: 1.8;
-        font-size: 12px;
+        font-size: 16px;
         margin-bottom: 10px;
     }
 
     h3{
-        font-size: 1.3em;
+        font-size: 1.5em;
         color: #9B42C7;
         font-family: 'Acme';
     }
 
-
+ //Vista Desktop
     @media screen and (min-width: 700px) {
+        .description{
+            width: 550px;
+            max-height:150px;
+        }
         h2{
             font-size: 1.4em;
         }
@@ -65,7 +77,8 @@ export const Contenido = styled.div`
             margin-bottom: 15px;
         }
         h3{
-        font-size: 1.4em;
+            margin-top: 10px;
+            font-size: 1.4em;
         }
     }
 `

@@ -93,12 +93,17 @@ export const Card = styled.div`
             text-align: center;
         }
 
+        .title{
+            max-height: 100px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
         h2{
             font-size: 1.2em;
             color: #9B42C7;
             font-family: 'Acme';
             margin-top: 10px;
-            margin-bottom: 9px;
+            margin-bottom: 5px;
         }
 
         .image{
@@ -119,21 +124,22 @@ export const Card = styled.div`
 
          
     .description{
-        max-height: 75px;
+        max-height: 70px;
         margin-top: 5px;
         line-height: 1;
+        margin-bottom: 0px;
     }
     h3{
         margin-bottom: 0px;
-        font-size: 20px;
+        font-size: 23px;
         color: #9B42C7;
         font-family: 'Acme';
     }
-    a{
+    .Link{
       margin-top: 0px;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       padding: 4px;
-      font-size: 15px;
+      font-size: 18px;
     }
 
     }
