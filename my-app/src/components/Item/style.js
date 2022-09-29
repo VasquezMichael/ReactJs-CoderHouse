@@ -113,7 +113,6 @@ export const Card = styled.div`
             align-items: center;
             margin: 0;
             img{
-                width: 200px;
                 height: 210px;
                 transition: all 1000ms ease;
                 :hover{

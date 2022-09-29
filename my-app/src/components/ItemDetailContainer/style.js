@@ -1,13 +1,17 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+    display: flex;
+    text-align: center;
+    justify-content: center;
     width: 100%;
-    height: 300px;
     margin-top: 20px;
-    
     .container_card{
+        text-align: center;
+        justify-content: center;
         background-color: #CAC6CB;
     }
+    //vista desktop
     @media screen and (min-width: 700px) {
         width: 100%;
         display: flex;
@@ -16,11 +20,10 @@ export const Container = styled.div`
 
 
         .container_card{
-            display: flex;
-            text-align: center;
-            justify-content: center;
-            width: 900px;
-            background-color: #CAC6CB;
+            width: 950px;
+            height: 70%;
+            background-color: #fff;
+            border: 2px solid #CAC6CB
         }
     }
 

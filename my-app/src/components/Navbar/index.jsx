@@ -60,7 +60,7 @@ const Navbar = () => {
                 </MenuItem>
                 
                 <MenuItem>
-                    <Link className='Link LinkCartWidget' to='/category/cart' onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                    <Link className='Link LinkCartWidget' to='/cart' onClick={() => setShowMobileMenu(!showMobileMenu)}>
                         <CartWidget/>
                     </Link>
                 </MenuItem>

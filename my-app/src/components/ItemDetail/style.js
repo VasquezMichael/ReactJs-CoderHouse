@@ -5,27 +5,33 @@ export const Cart = styled.div`
     width: 100%;
     padding: 20px;
     text-align: center;
-    justify-content: space-around;
+    justify-content: center;
+    flex-direction: column;
+    @media screen and (min-width: 700px) {
+      flex-direction: row;
+    }
 `
 
 export const Image = styled.div`
     display: flex;
+    width: 100%;
     margin-top: 10px;
+    margin-bottom: 20px;
     text-align: center;
     justify-content: center;
-    img{
-        width: 400px;
-        height: 210px;
-         //Vista Desktop
-        @media screen and (min-width: 700px) {
-            width: 85%;
-
-        }
-    }
- //Vista Desktop
-    @media screen and (min-width: 700px) {
+     //Vista Desktop
+     @media screen and (min-width: 700px) {
         width: 480px;
         height: 210px;
+    }
+
+    img{
+        height: 230px;
+         //Vista Desktop
+        @media screen and (min-width: 700px) {
+            
+
+        }
     }
 
 `
@@ -33,12 +39,15 @@ export const Image = styled.div`
 export const Contenido = styled.div`
     display: flex;
     flex-direction: column;
+    width: 100%;
     text-align: center;
     justify-content: center;
+    
     .description{
         text-align: center;
         justify-content: center;
-        width: 300px;
+        padding: 10px;
+        width: 100%;
         max-height: 137px;
         overflow: hidden;
     }
@@ -46,18 +55,19 @@ export const Contenido = styled.div`
         font-size: 1.4em;
         color: #9B42C7;
         font-family: 'Acme';
-        margin-bottom: 10px;
+        padding-top: 10px;
+        
     }
     
     p{
         color: #6a6a6a;
-        line-height: 1.8;
+        line-height: 1.3;
         font-size: 16px;
-        margin-bottom: 10px;
+       
     }
 
     h3{
-        font-size: 1.5em;
+        font-size: 1.4em;
         color: #9B42C7;
         font-family: 'Acme';
     }
