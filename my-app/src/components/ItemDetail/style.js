@@ -72,6 +72,24 @@ export const Contenido = styled.div`
         font-family: 'Acme';
     }
 
+    .NavLink{
+        margin: 0 auto;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 20px;
+        padding: 4px;
+        font-size: 18px;
+        border: 1.5px solid #9B42C7;
+        border-radius: 4px;
+        transition: all 400ms ease;
+    }
+
+    .NavLink:hover{
+        background-color: #9B42C7;
+        color: #fff;
+    }
+
+
  //Vista Desktop
     @media screen and (min-width: 700px) {
         .description{

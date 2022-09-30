@@ -26,10 +26,12 @@ const ItemDetail = ({listProduct}) => {
         <h3>{'$'+listProduct.price}</h3>
         {
           !Added ? 
-          <ItemCount initial = {1} stock={5} onAdd = {onAdd}/>  : 
-          <NavLink to = '/cart'>
-            <h3>Ir al carrito</h3>
-          </NavLink>
+          <ItemCount initial = {1} stock={5} onAdd = {onAdd}/>  :
+
+            <NavLink className='NavLink' to = '/cart'>
+              Ir al carrito
+            </NavLink>
+
         }
       </Contenido>
     </Cart>
