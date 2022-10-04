@@ -7,6 +7,9 @@ import { CarritoLink } from '../CartWidget/CartWidgetStyle.js';
 
 import {NavLink, Link} from "react-router-dom";
 
+import { useContext } from 'react';
+import { CartContext, useCartContext } from '../../Contex/CartContex.jsx';
+ 
 import { 
     FaBars,
     FaHome,
@@ -14,9 +17,10 @@ import {
     FaTshirt,
     FaTimes,
  } from "react-icons/fa";
- 
-const Navbar = () => {
 
+const Navbar = () => {
+    const {cart} = useCartContext();
+    console.log(cart.length);
     const [showMobileMenu, setShowMobileMenu] = useState(false);
   return (
     <Container>
@@ -61,7 +65,7 @@ const Navbar = () => {
                 
                 <MenuItem>
                     <Link className='Link LinkCartWidget' to='/cart' onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                        <CartWidget/>
+                        <CartWidget/> <h4>{cart.length}</h4>
                     </Link>
                 </MenuItem>
             </Menu>
