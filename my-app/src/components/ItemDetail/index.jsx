@@ -3,12 +3,15 @@ import { Cart,Image, Contenido } from './style';
 import { ItemCount } from '../ItemCount';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useCartContext } from '../../Contex/CartContex';
 
 const ItemDetail = ({listProduct}) => {
 
-  const [Added,SetAdded] = useState(false)
+  const [Added,SetAdded] = useState(false);
+  const {cart, addCart} = useCartContext();
 
-  const onAdd = () => {
+  const onAdd = (count) => {
+    addCart(listProduct,count)
     SetAdded(true);
   }
   return (

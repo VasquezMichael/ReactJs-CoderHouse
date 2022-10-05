@@ -3,8 +3,10 @@ import {NavLink, Link} from "react-router-dom";
 import { Card } from "./style";
 
 
+
 const Item = ({product}) => {
   return (
+    
     <Card>
         <div className="title">
           <h2>{product.title}</h2>

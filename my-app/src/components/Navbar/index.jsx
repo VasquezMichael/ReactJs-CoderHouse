@@ -20,7 +20,7 @@ import {
 
 const Navbar = () => {
     const {cart} = useCartContext();
-    console.log(cart.length);
+    console.log(cart);
     const [showMobileMenu, setShowMobileMenu] = useState(false);
   return (
     <Container>
