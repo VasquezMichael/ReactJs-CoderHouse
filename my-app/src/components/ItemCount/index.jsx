@@ -8,8 +8,7 @@ export const ItemCount = ({initial,stock,onAdd}) => {
     const decrease = () => count > initial ? SetCount(count - 1) : console.log('La cantidad no puede ser menor a ',initial);
 
     const addItem = () => {
-        console.log(count);
-       onAdd(count);
+        onAdd(count);
     }
 
 

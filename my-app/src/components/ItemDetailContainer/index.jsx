@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom'
 
 const ItemDetailContainer = () => {
 
-    const [listProduct, setListProduct] = useState({});
+    const [item, setItem] = useState({});
     const [loading, setLoading] = useState(true);
     const {id} = useParams();
 
@@ -17,7 +17,7 @@ const ItemDetailContainer = () => {
             try {
                 const res = await fetch(`https://fakestoreapi.com/products/${id}`);
                 const product = await res.json();
-                setListProduct(product);
+                setItem(product);
                 setLoading(false);
     
             } catch (error) {
@@ -33,7 +33,7 @@ const ItemDetailContainer = () => {
   return (
     <Container>
         <div className="container_card">
-            {loading ?  <Text>Cargando...</Text> :  <ItemDetail listProduct = {listProduct}/>}
+            {loading ?  <Text>Cargando...</Text> :  <ItemDetail item = {item}/>}
         </div> 
     </Container>
   )

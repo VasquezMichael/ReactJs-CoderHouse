@@ -5,28 +5,29 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useCartContext } from '../../Contex/CartContex';
 
-const ItemDetail = ({listProduct}) => {
+
+const ItemDetail = ({item}) => {
 
   const [Added,SetAdded] = useState(false);
-  const {cart, addCart} = useCartContext();
+  const {addCart} = useCartContext();
 
   const onAdd = (count) => {
-    addCart(listProduct,count)
+    addCart(item,count)
     SetAdded(true);
   }
   return (
     <Cart>
       <Image>
-        <img src={listProduct.image} alt="" />
+        <img src={item.image} alt="" />
         
       </Image>
       <hr></hr>
       <Contenido>
-        <h2 className="title">{listProduct.title}</h2>
+        <h2 className="title">{item.title}</h2>
         <div className="description">
-          <p className=" description_p">{listProduct.description}</p>
+          <p className=" description_p">{item.description}</p>
         </div>
-        <h3>{'$'+listProduct.price}</h3>
+        <h3>{'$'+item.price}</h3>
         {
           !Added ? 
           <ItemCount initial = {1} stock={5} onAdd = {onAdd}/>  :
