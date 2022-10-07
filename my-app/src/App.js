@@ -15,8 +15,8 @@ function App() {
           <BrowserRouter>
             <Navbar/>
             <Routes>
-              <Route path={'/'} element={<ItemListContainer greeting = 'Bienvenido a DripCode'/>} />
-              <Route path={'/category/:category'} element={<ItemListContainer greeting = 'Listado de: '/>}/>
+              <Route path={'/'} element={<ItemListContainer greeting = 'Welcome to DripCode'/>} />
+              <Route path={'/category/:category'} element={<ItemListContainer greeting = ' List'/>}/>
               <Route path={'/product/:id'} element={<ItemDetailContainer/>}/>
               <Route path={'/cart'} element={<Cart/>}/>
             </Routes>

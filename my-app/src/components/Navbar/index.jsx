@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GiGooeyDaemon } from "react-icons/gi";
+import { GiGooeyDaemon, GiH2O } from "react-icons/gi";
 import { IconContext } from "react-icons";
 import {Container, LogoContainer, Wrapper, Menu, MenuItem, MenuItemLink, MobileIcon } from './Navbar-elements.js'
 import { CartWidget } from '../CartWidget/index.jsx';
@@ -19,8 +19,7 @@ import {
  } from "react-icons/fa";
 
 const Navbar = () => {
-    const {cart} = useCartContext();
-    console.log(cart);
+    const {totalProducts} = useCartContext();
     const [showMobileMenu, setShowMobileMenu] = useState(false);
   return (
     <Container>
@@ -65,7 +64,7 @@ const Navbar = () => {
                 
                 <MenuItem>
                     <Link className='Link LinkCartWidget' to='/cart' onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                        <CartWidget/> <h4>{cart.length}</h4>
+                        <CartWidget/> <h4>{ totalProducts() > 0 ? totalProducts() : <></> }</h4>
                     </Link>
                 </MenuItem>
             </Menu>

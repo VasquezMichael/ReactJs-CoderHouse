@@ -39,7 +39,7 @@ const ItemListContainer = ({greeting}) => {
     <Container>
         <ContainerTittle>
           <h1>{
-            category ? greeting + category: greeting 
+            category ?  category + greeting : greeting 
           }</h1>
         </ContainerTittle>
 

@@ -17,7 +17,7 @@ export const ItemCount = ({initial,stock,onAdd}) => {
             <button onClick={decrease}>-</button>
             <h3>{count}</h3>
             <button onClick={increase}>+</button>
-            <button onClick={addItem}>Añadir</button>
+            <button onClick={addItem}>Add</button>
         </Container>
     )
 }
