@@ -1,11 +1,13 @@
 import { Spinner } from '@chakra-ui/react'
-import { ItemCount } from'../ItemCount'
 import {Container, ContainerTittle, ListContainer} from './style'
 import { products } from '../../utils/products'
 import { customFetch, getListProduct  } from '../../utils/customFetch'
 import { useState, useEffect } from 'react'
 import { ItemList } from '../ItemList'
 import { useParams } from 'react-router-dom'
+import { db } from '../../firebase/firebase'
+import { getDocs, collection, query, where} from 'firebase/firestore'
+import { async } from '@firebase/util'
 
 const ItemListContainer = ({greeting}) => {
   const [listProduct, setListProduct] = useState([]);
@@ -17,22 +19,28 @@ const ItemListContainer = ({greeting}) => {
   let url = '';
   
   useEffect(()=>{
-
-    category ? url = URL_CATEGORY + '/'+category : url = URL_BASE;
-
-    const getListProduct = async () => {
-      try { 
-        const res = await fetch(`${url}`);
-        const listProduct = await res.json();
+    //Obtenemos la coleccion de productos desde la base de datos.
+    const productsCollection = collection(db, 'products');
+    category ? url = query(productsCollection, where('category', '==', `${category}`)) : url = productsCollection;
+ 
+    const getCollectionProducts = async () => {
+      try {
+        const res = await getDocs(url);
+        const list = res.docs.map((product) => {
+          return {...product.data(), id: product.id}
+        })
         setLoading(false);
-        setListProduct(listProduct);
+        setListProduct(list); 
       }
        catch (error) {
         console.log(error);
       }
-
     }
-    getListProduct();
+
+    getCollectionProducts();
+
+
+
   },[category])
 
   return (

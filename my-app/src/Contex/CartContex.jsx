@@ -8,9 +8,11 @@ export const CartContexProvider = ({ children }) => {
 
   const [cart, setCart] = useState([]);
   console.log(cart);
+  
   const isInCart = (id) => cart.find(product => product.id === id);
 
   const addCart = (item, quantity) => {
+    console.log(item);
     if(isInCart(item.id)){
       const newCart = cart.map(product => {
         if (item.id === product.id) {

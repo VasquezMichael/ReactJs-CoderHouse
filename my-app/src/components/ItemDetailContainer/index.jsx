@@ -5,6 +5,9 @@ import {Text} from '@chakra-ui/react'
 import { Container } from './style'
 import { useParams } from 'react-router-dom'
 
+import { collection, getDoc, doc } from 'firebase/firestore'
+import { db } from '../../firebase/firebase'
+
 const ItemDetailContainer = () => {
 
     const [item, setItem] = useState({});
@@ -12,20 +15,26 @@ const ItemDetailContainer = () => {
     const {id} = useParams();
 
     useEffect(()=>{
+
         const getProduct = async () => {
             setLoading(true);
+            const productCollection = collection(db,'products');
+            const refDoc = doc(productCollection,id);
             try {
-                const res = await fetch(`https://fakestoreapi.com/products/${id}`);
-                const product = await res.json();
-                setItem(product);
+                const product = await getDoc(refDoc);
+                
+                setItem({
+                    ...product.data(),
+                    id: product.id
+                })
                 setLoading(false);
-    
             } catch (error) {
-                console.error('Se produjo un error: ',error);
+                console.error(error);
             }
-
         }
+
         getProduct();
+
 
     },[])
 
