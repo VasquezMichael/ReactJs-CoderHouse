@@ -3,13 +3,15 @@ import { useCartContext } from '../../Contex/CartContex';
 import {Container, Tabla, TablaProducts, Container_Tablas, Container_No_Items} from './style'
 import { CloseButton, Text, Button } from '@chakra-ui/react'
 import { NavLink } from 'react-router-dom';
-const Cart = () => {
-  const {
-    cart,
-    totalPrice,
-    removeProduct,
-    cleanCart
-  } = useCartContext();
+import {InitialFocus} from '../ModalPay'
+
+  const Cart = () => {
+    const {
+      cart,
+      totalPrice,
+      removeProduct,
+      cleanCart
+    } = useCartContext();
 
   return (
     <>
@@ -46,7 +48,9 @@ const Cart = () => {
              </h2>
              <Button onClick={() => cleanCart()} size='sm'>Clear</Button>
             </div>
+            
           </Container_Tablas>
+          <InitialFocus/>
         </Container> 
         : 
         <Container_No_Items>
@@ -58,6 +62,7 @@ const Cart = () => {
           </div>
         </Container_No_Items>
       }
+
     </>
   )
 }
