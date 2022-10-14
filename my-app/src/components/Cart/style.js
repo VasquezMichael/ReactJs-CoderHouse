@@ -22,10 +22,15 @@ export const Container_Tablas = styled.div`
             background-color: red;
             color: #fff;
         }
+        #btn-modal{
+            background-color: green;
+            color: #fff;
+        }
         h2{
             font-size: 20px;
             margin-left: 10px;
         }
+
     }
 
     @media screen and (min-width: 960px){

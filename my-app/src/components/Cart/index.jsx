@@ -46,11 +46,14 @@ import {InitialFocus} from '../ModalPay'
                 }
                 
              </h2>
-             <Button onClick={() => cleanCart()} size='sm'>Clear</Button>
+             <div className="btn">
+              <InitialFocus/>
+              <Button onClick={() => cleanCart()} size='sm'>Clear</Button>
+             </div>
             </div>
             
           </Container_Tablas>
-          <InitialFocus/>
+          
         </Container> 
         : 
         <Container_No_Items>
