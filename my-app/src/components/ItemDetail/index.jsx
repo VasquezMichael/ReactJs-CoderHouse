@@ -7,7 +7,7 @@ import { useCartContext } from '../../Contex/CartContex';
 
 
 const ItemDetail = ({item}) => {
-
+  console.log(item);
   const [Added,SetAdded] = useState(false);
   const {addCart} = useCartContext();
 
@@ -30,7 +30,7 @@ const ItemDetail = ({item}) => {
         <h3>{'$'+item.price}</h3>
         {
           !Added ? 
-          <ItemCount initial = {1} stock={5} onAdd = {onAdd}/>  :
+          <ItemCount initial = {1} stock={item.stock} onAdd = {onAdd}/>  :
 
             <NavLink className='NavLink' to = '/cart'>
               Ir al carrito

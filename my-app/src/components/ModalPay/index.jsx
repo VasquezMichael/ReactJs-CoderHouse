@@ -7,7 +7,6 @@ import {
     ModalFooter,
     ModalBody,
     ModalCloseButton,
-    CloseButton,
     useDisclosure,
     Button,
     FormLabel,
@@ -16,7 +15,6 @@ import {
   } from '@chakra-ui/react'
 
 import { useCartContext } from '../../Contex/CartContex'
-import styled from 'styled-components'
 import { db } from '../../firebase/firebase'
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
 

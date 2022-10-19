@@ -1,18 +1,40 @@
-import  { createContext, useContext, useState } from 'react'
-
+import { doc, updateDoc } from 'firebase/firestore';
+import  { createContext, useContext, useEffect, useState } from 'react'
+import { db } from '../firebase/firebase';
 
 export const CartContext = createContext([]);
 export const useCartContext = () => useContext(CartContext);
-
 export const CartContexProvider = ({ children }) => {
 
   const [cart, setCart] = useState([]);
-  console.log(cart);
-  
+  const [productosAgregados, setProductosAgregados] = useState(false);
+
+  useEffect(() => {
+    console.log('entre');
+    const storage = JSON.parse(localStorage.getItem('carrito'));
+    if (storage){
+      setCart(storage);
+      setProductosAgregados(true);
+    }
+  },[])
+
+  useEffect(() => {
+    if (productosAgregados) {
+      actualizarStock();
+      localStorage.setItem('carrito', JSON.stringify(cart));
+    }
+  },[cart])
+
+  const actualizarStock = () => {
+    cart.forEach(product => {
+      const stockActualizado = doc(db, 'products', product.id);
+      updateDoc(stockActualizado, {stock: (product.stock - product.quantity)})
+    });
+  }
+
   const isInCart = (id) => cart.find(product => product.id === id);
 
   const addCart = (item, quantity) => {
-    console.log(item);
     if(isInCart(item.id)){
       const newCart = cart.map(product => {
         if (item.id === product.id) {
@@ -23,17 +45,20 @@ export const CartContexProvider = ({ children }) => {
         }
       })
       setCart(newCart);
+      setProductosAgregados(true);
     } else{
       const newProduct = {...item, quantity: quantity}
-      setCart([...cart, newProduct])
+      setCart([...cart, newProduct]);
+      setProductosAgregados(true);
     }
   }
-
+  
   const removeProduct = (id) => setCart(cart.filter(prod => prod.id != id))
 
   const cleanCart = () => setCart([])
 
   const totalPrice = () => {
+
     return cart.reduce((acc, product) => acc += (product.price * product.quantity),0);
   }
 
@@ -48,8 +73,7 @@ export const CartContexProvider = ({ children }) => {
       removeProduct,
       cleanCart,
       totalPrice,
-      totalProducts
-
+      totalProducts,
     }}>
         {children}
 

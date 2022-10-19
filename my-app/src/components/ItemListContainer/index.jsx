@@ -14,8 +14,6 @@ const ItemListContainer = ({greeting}) => {
   const [loading, setLoading] = useState(true);
   
   const {category} = useParams();
-  const URL_BASE = 'https://fakestoreapi.com/products';
-  const URL_CATEGORY = 'https://fakestoreapi.com/products/category';
   let url = '';
   
   useEffect(()=>{

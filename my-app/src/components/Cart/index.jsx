@@ -11,7 +11,7 @@ import {InitialFocus} from '../ModalPay'
       totalPrice,
       removeProduct,
       cleanCart
-    } = useCartContext();
+  } = useCartContext();
 
   return (
     <>
