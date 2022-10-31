@@ -15,7 +15,6 @@ const ItemDetailContainer = () => {
     const {id} = useParams();
 
     useEffect(()=>{
-
         const getProduct = async () => {
             setLoading(true);
             const productCollection = collection(db,'products');
@@ -32,16 +31,16 @@ const ItemDetailContainer = () => {
                 console.error(error);
             }
         }
-
         getProduct();
-
-
-    },[])
+    },[id])
 
 
   return (
     <Container>
-        <div className="container_card">
+        <div className="container_title">
+            <h1>{item.category} / {item.title}</h1>
+        </div>
+        <div className="container_card" style={{height: window.screen.height}}>
             {loading ?  <Text>Cargando...</Text> :  <ItemDetail item = {item}/>}
         </div> 
     </Container>

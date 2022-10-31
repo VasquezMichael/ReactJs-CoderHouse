@@ -4,13 +4,12 @@ import { db } from '../firebase/firebase';
 
 export const CartContext = createContext([]);
 export const useCartContext = () => useContext(CartContext);
-export const CartContexProvider = ({ children }) => {
 
+export const CartContexProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [productosAgregados, setProductosAgregados] = useState(false);
 
   useEffect(() => {
-    console.log('entre');
     const storage = JSON.parse(localStorage.getItem('carrito'));
     if (storage){
       setCart(storage);
@@ -20,7 +19,6 @@ export const CartContexProvider = ({ children }) => {
 
   useEffect(() => {
     if (productosAgregados) {
-      actualizarStock();
       localStorage.setItem('carrito', JSON.stringify(cart));
     }
   },[cart])
@@ -74,6 +72,7 @@ export const CartContexProvider = ({ children }) => {
       cleanCart,
       totalPrice,
       totalProducts,
+      actualizarStock
     }}>
         {children}
 

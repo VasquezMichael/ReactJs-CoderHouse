@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const ListContainer = styled.div`
     width: 100%;
     height: 100%;
-    /* background-color: #CAC6CB; */
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -29,19 +28,15 @@ export const ContainerTittle = styled.div`
     text-align: center;
     justify-content: center;
     padding-bottom: .3em;
-    font-size: 3.3em;
-    font-family:  'Smooch';
-
+    font-size: 4.3em;
+    font-family: 'Smooch';
     h1{
         margin-top: 15px;
+
     }
 
     @media screen and (max-width: 960px) {
-        font-size: 2.5em;
+        font-size: 3.5em;
     }
     
-`
-
-export const ContainerDescription = styled.div`
-
 `

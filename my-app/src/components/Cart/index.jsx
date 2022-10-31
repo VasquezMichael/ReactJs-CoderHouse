@@ -1,11 +1,11 @@
 import React from 'react'
 import { useCartContext } from '../../Contex/CartContex';
-import {Container, Tabla, TablaProducts, Container_Tablas, Container_No_Items} from './style'
+import {Container, Tabla, ContainerTablas, ContainerNoItems, TablaProducts} from './style'
 import { CloseButton, Text, Button } from '@chakra-ui/react'
 import { NavLink } from 'react-router-dom';
 import {InitialFocus} from '../ModalPay'
 
-  const Cart = () => {
+const Cart = () => {
     const {
       cart,
       totalPrice,
@@ -16,9 +16,9 @@ import {InitialFocus} from '../ModalPay'
   return (
     <>
       {
-        cart.length != 0 ?     
+        cart.length !== 0 ?     
         <Container>
-          <Container_Tablas>
+          <ContainerTablas>
             <Tabla>
               <div className='Tabla_Product'>Productos</div>
               <div className='Tabla_Cant'>Cantidad</div>
@@ -44,7 +44,6 @@ import {InitialFocus} from '../ModalPay'
                 {
                 'Total: $'+totalPrice()
                 }
-                
              </h2>
              <div className="btn">
               <InitialFocus/>
@@ -52,18 +51,18 @@ import {InitialFocus} from '../ModalPay'
              </div>
             </div>
             
-          </Container_Tablas>
+          </ContainerTablas>
           
         </Container> 
-        : 
-        <Container_No_Items>
+        :
+        <ContainerNoItems style={{height: window.screen.height}}>
           <div className="ContainerElements">
             <Text>Aun no hay productos en el carrito</Text>
             <NavLink className='NavLink' to = '/'>
               to Shop
             </NavLink>
           </div>
-        </Container_No_Items>
+        </ContainerNoItems>
       }
 
     </>

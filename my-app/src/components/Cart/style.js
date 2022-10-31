@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width: 100%;
-
+    height: 80vh;
 `
 
 
-export const Container_Tablas = styled.div`
+export const ContainerTablas = styled.div`
     width: 450px;
     margin: 0 auto;
     border-radius: 6px;
@@ -15,7 +15,7 @@ export const Container_Tablas = styled.div`
     .totalPrice{
         display: flex;
         justify-content: space-between;
-        background-color: #D9D6DB;
+        background-color: #F3F3F3;
         
         Button{
             margin-right: 10px;
@@ -48,7 +48,7 @@ export const Tabla = styled.div`
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-    background-color: #D9D6DB;
+    background-color: #F3F3F3;
     
     .Tabla_Product{
         max-width: 70%;
@@ -92,7 +92,7 @@ export const TablaProducts = styled.div`
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-    background-color: #E1DEE3;
+    background-color: #FBFBFB;
     .Product{
         display: flex;
         max-width: 60%;
@@ -138,16 +138,12 @@ export const TablaProducts = styled.div`
     }
 `
 
-export const Container_No_Items = styled.div`
+export const ContainerNoItems = styled.div`
     width: 100%;
-    height: 90vh;
-    background-color: beige;
-
     .ContainerElements{
         display: flex;
-        flex-direction: column;
-        width: 100%;
         height: 100%;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         font-size: 2em;

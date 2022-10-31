@@ -7,6 +7,8 @@ export const Cart = styled.div`
     text-align: center;
     justify-content: center;
     flex-direction: column;
+    background-color: #fff;
+    /* vista desktop */
     @media screen and (min-width: 700px) {
       flex-direction: row;
     }
@@ -19,14 +21,17 @@ export const Image = styled.div`
     margin-bottom: 20px;
     text-align: center;
     justify-content: center;
+
+    
      //Vista Desktop
      @media screen and (min-width: 700px) {
         width: 480px;
-        height: 210px;
+        height: 250px;
     }
 
     img{
-        height: 230px;
+        width: 75%;
+        height: 250px;
          //Vista Desktop
         @media screen and (min-width: 700px) {
             
@@ -40,20 +45,21 @@ export const Contenido = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    text-align: center;
+    text-align: start;
     justify-content: center;
     
     .description{
-        text-align: center;
+        text-align: start;
         justify-content: center;
-        padding: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
         width: 100%;
         max-height: 137px;
         overflow: hidden;
     }
     h2{
         font-size: 1.4em;
-        color: #9B42C7;
+        color: #000;
         font-family: 'Acme';
         padding-top: 10px;
         
@@ -68,7 +74,8 @@ export const Contenido = styled.div`
 
     h3{
         font-size: 1.4em;
-        color: #9B42C7;
+        color: #000;
+        font-weight: bold;
         font-family: 'Acme';
     }
 

@@ -6,7 +6,6 @@ export const Container = styled.div`
     background-color: #545453;
     height: 70px;
     width: 100%;
-
     
 `;
 
@@ -33,7 +32,7 @@ export const LogoContainer =  styled.div`
     padding: 0 .3%;
     p{
         color: #F3F17F;
-        font-size: 2.2rem;
+        font-size: 2.5rem;
         font-family: 'Smooch';
     }
 
@@ -44,6 +43,10 @@ export const LogoContainer =  styled.div`
     //vista mobile
     @media screen and (max-width: 960px) {
         margin-left: 10px;
+        p{
+            font-size: 2.3rem;
+        }
+
     }
     
 `;
@@ -63,11 +66,11 @@ export const Menu = styled.ul`
         z-index: 10;
         top: 70px;
         width: 100%;
-        height: 90vh;
+        height: 100%;
         right: ${({open}) => (open ? "0" : "100%")};
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         transition: .5s all ease;
         margin: auto;
     }
@@ -80,11 +83,11 @@ export const MenuItem = styled.li`
         justify-content: center;
         align-items: center;
         height: 100%;
-        padding: 0.5rem 2.5rem;
+        padding: 0.2rem 1.5rem;
         font-size: 1.3rem;
         cursor: pointer;
         transition: 0.5s all ease;
-        
+       
         &:hover{
             transition: 0.5s all ease;
             color: #000;
@@ -105,6 +108,8 @@ export const MenuItem = styled.li`
         //Vista mobile
         @media screen and (max-width: 960px){
             width: 100%;
+            margin-top: 50%;
+            
             div{
                 justify-content: center;
                 align-items: center;
