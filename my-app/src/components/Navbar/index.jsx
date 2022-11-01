@@ -10,7 +10,6 @@ import {useCartContext} from '../../Contex/CartContex.jsx';
 import { 
     FaBars,
     FaHome,
-    FaUserAlt,
     FaTshirt,
     FaTimes,
  } from "react-icons/fa";

@@ -39,7 +39,7 @@ function InitialFocus() {
         return datosVenta.celular !== '' && datosVenta.email !==  '' && datosVenta.nombre !==  '';
     }
 
-    async function getUser (dataB,userId) {
+    async function getProducts (dataB,userId) {
         const refDoc = doc(dataB,userId);
         const x = await getDoc(refDoc).then((product) => {
             return {...product.data(), id: product.id};
@@ -51,7 +51,7 @@ function InitialFocus() {
     const validarStockDb = async () => {
         const sinStockDisponible = [];
         const dataB = collection(db,'products');
-        const promesas = cart.map((product) => getUser(dataB,product.id))
+        const promesas = cart.map((product) => getProducts(dataB,product.id))
         Promise.all([...promesas]).then((res) => {
             res.forEach(product => {
                 const productCart = cart.find(itemCart => itemCart.id === product.id);
