@@ -1,9 +1,10 @@
 import { Spinner } from '@chakra-ui/react'
-import {Container, ContainerTittle, ListContainer} from './style'
+import {Container, ContainerVideo, ListContainer} from './style'
 import { useState, useEffect } from 'react'
 import { ItemList } from '../ItemList'
 import { useParams } from 'react-router-dom'
 import { db } from '../../firebase/firebase'
+import Video from './video.mp4'
 import { getDocs, collection, query, where} from 'firebase/firestore'
 
 const ItemListContainer = ({greeting}) => {
@@ -36,13 +37,14 @@ const ItemListContainer = ({greeting}) => {
 
   return (
     <Container>
-      <ContainerTittle>
-        <h1>{
-          category ?  category + greeting : greeting 
-        }</h1>
-      </ContainerTittle>
+      {
+        greeting ? <video src={Video} autoPlay loop muted></video> : <>
+          <div className="tituloLista">
+            <h1>Home / productos / {category}</h1>
+          </div>
+        </>
+      }
 
-      
       <ListContainer>
         {
           loading ? <Spinner /> : <ItemList listProduct={listProduct}/>

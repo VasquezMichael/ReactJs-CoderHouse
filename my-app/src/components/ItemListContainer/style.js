@@ -20,23 +20,12 @@ export const Container = styled.div `
     width: 100%;
     height: 100%;
 
+    .tituloLista{
+        display: flex;
+        font-size: 1.2em;
+        justify-content: center;
+        margin-top: 10px;
+    }
 `
 
-export const ContainerTittle = styled.div`
-    width: 100%;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    padding-bottom: .3em;
-    font-size: 4.3em;
-    font-family: 'Smooch';
-    h1{
-        margin-top: 15px;
-
-    }
-
-    @media screen and (max-width: 960px) {
-        font-size: 3.5em;
-    }
     
-`
