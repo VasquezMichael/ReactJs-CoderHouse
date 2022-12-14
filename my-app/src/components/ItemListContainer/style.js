@@ -8,6 +8,8 @@ export const ListContainer = styled.div`
     justify-content: space-around;
     padding: 1em 0;
     flex-wrap: wrap;
+
+
     /* Vista desktop */
     @media screen and (min-width: 960px) {
         

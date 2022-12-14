@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-    width: 360px;
-    margin: 20px;
+    width: 200px;
+    margin: 20px 0px 10px 0px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -18,32 +18,12 @@ export const Card = styled.div`
         box-shadow:  5px 5px 20px rgba(0,0,0,0.2);
     }
 
-    h2{
-        font-size: 1.5em;
-        color: #000;
-        font-family: 'Acme';
- 
-    }
-    h3{
-        font-size: 1.4em;
-        color: #000;
-        font-family: 'Acme';
-        font-weight: bold;
-        margin-top: 15px;
-    }
-
-    p{
-        color: #6a6a6a;
-        line-height: 1.5;
-    }
-
 
     .image{
-        width: 100%;
         display: flex;
-        justify-content: center;
+        width: 100%;
+        justify-content: start;
         align-items: center;
-        margin: 20px 0px 10px 0;
         img{
             width: 220px;
             height: 220px;
@@ -51,78 +31,118 @@ export const Card = styled.div`
     }
 
     .contenido{
-        padding: 15px;
-        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 5px;
+        text-align: left;
+
+        h2{
+            font-size: 1em;
+            color: #000;
+            font-family: 'Acme';
+            margin-bottom: 7px;
+        }
     }
 
     .description{
-        max-height: 90px;
+        max-height: 40px;
         overflow: hidden;
-    }
-
-    .Link{
-      text-decoration: none;
-      display: inline-block;
-      width: 100%;
-      margin-top: 20px;
-      padding: 4px;
-      font-size: 18px;
-      border: 1.5px solid #9B42C7;
-      border-radius: 4px;
-      transition: all 400ms ease;
-    }
-
-    .Link:hover{
-        background-color: #9B42C7;
-        color: #fff;
+        margin-bottom: 7px;
+        p{
+            color: #6a6a6a;
+            line-height: 1.2;
+        }
     }
 
 
+    .priceVermas{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        h3{
+            font-size: 1.1em;
+            color: #000;
+            font-family: 'Acme';
+            font-weight: bold;
+
+        }
+
+        .Link{
+            text-decoration: none;
+            display: flex;
+            width: 100%;
+            height: 30px;
+            margin: 0px 10px 0px 10px;
+            text-align: center;
+            justify-content: center;
+            font-size: 18px;
+            border: 1.5px solid #9B42C7;
+            border-radius: 4px;
+            transition: all 400ms ease;
+        }
+        .Link:hover{
+            background-color: #9B42C7;
+            color: #fff;
+        }
+    }
+
+
+
+
+    /* vista desktop */
     @media screen and (min-width: 960px) {
-        width: 300px;
+        width: 280px;
         height: 470px;
         transition: all 1000ms ease;
         :hover{
             transform: translateY(-3%);
         }
 
-        .title{
-            max-height: 100px;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-        h2{
-            font-size: 1.2em;
-            margin-top: 10px;
-            margin-bottom: 5px;
-        }
-
         .image{
             width: 100%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 0;
+
             img{
-                height: 215px;
+
+                height: 250px;
             }
          }
 
-         
+
+        .title{
+            max-height: 20px;
+            overflow: hidden;
+            margin-bottom: 7px;
+            h2{
+                font-size: 1.1em;
+            }
+        }
         .description{
-            max-height: 70px;
-            margin-top: 5px;
             line-height: 1;
-            margin-bottom: 0px;
+            margin-bottom: 7px;
+            p{
+                font-size: 0.8em;
+            }
         }
-        h3{
-            margin-bottom: 0px;
-            font-size: 23px;
-        }
-        .Link{
-            margin-top: 0px;
-            margin-bottom: 15px;
-            padding: 4px;
+
+        .priceVermas{
+            h3{
+                font-size: 1.1em;
+            }
+            .Link{
+                align-items: center;
+                width: 100%;
+                height: 25px;
+                margin: 0px 10px 0px 10px;
+                padding: 0;
+            }
         }
 
     }
