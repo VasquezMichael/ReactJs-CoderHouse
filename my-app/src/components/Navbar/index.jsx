@@ -38,7 +38,7 @@ const Navbar = () => {
                     showMobileMenu ? <FaTimes/> : <FaBars/> 
                 }
             </MobileIcon>
-            <Menu open = {showMobileMenu}>
+            <Menu open = {showMobileMenu} height = {window.screen.height}>
                 <MenuItem>
                     <Link className='Link' to='/' onClick={() => {
                         setShowMobileMenu(!showMobileMenu);

@@ -26,10 +26,12 @@ const ItemDetail = ({item}) => {
      
       <Contenido>
         <h2 className="title">{item.title}</h2>
+        <hr></hr>
         <div className="description">
           <p className=" description_p">{item.description}</p>
         </div>
         <h3>{'$'+item.price}</h3>
+        <hr></hr>
         {
           hayStock() ?  
             !Added ? 
@@ -39,7 +41,11 @@ const ItemDetail = ({item}) => {
                   Ir al carrito
                 </NavLink>
               :
-            <h2>Lo siento, no hay stock :(</h2>
+              <div>
+                <h3 id='agotado'>Agotado</h3>
+                <h5>En estos momentos no disponemos de éste producto.</h5>
+              </div>
+
 
         }
       </Contenido>

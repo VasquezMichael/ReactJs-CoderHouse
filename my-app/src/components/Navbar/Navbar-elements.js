@@ -52,7 +52,6 @@ export const LogoContainer =  styled.div`
 `;
 
 export const Menu = styled.ul`
-
     display: flex;
     justify-content: space-between;
     list-style: none;
@@ -66,7 +65,7 @@ export const Menu = styled.ul`
         z-index: 10;
         top: 70px;
         width: 100%;
-        height: 100%;
+        height: 920px;
         right: ${({open}) => (open ? "0" : "100%")};
         flex-direction: column;
         align-items: center;

@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width: 100%;
-    height: 80vh;
+    height: 100vh;
 `
 
 
 export const ContainerTablas = styled.div`
-    width: 450px;
+    width: 100%;
     margin: 0 auto;
     border-radius: 6px;
     box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
@@ -147,6 +147,11 @@ export const ContainerNoItems = styled.div`
         align-items: center;
         justify-content: center;
         font-size: 2em;
+        p{
+            color: #6a6a6a;
+            line-height: 1.3;
+            font-size: 18px;
+        }
     }
 
     .NavLink{

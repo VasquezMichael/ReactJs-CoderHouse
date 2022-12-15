@@ -57,9 +57,10 @@ const Cart = () => {
         :
         <ContainerNoItems style={{height: window.screen.height}}>
           <div className="ContainerElements">
-            <Text>Aun no hay productos en el carrito</Text>
+            <img src="https://drifters.com.ar/img/carrito-triste.png" alt="" />
+            <p>¡Tu carrito esta vacio!</p>
             <NavLink className='NavLink' to = '/'>
-              to Shop
+              Agrega productos desde el catalogo
             </NavLink>
           </div>
         </ContainerNoItems>
